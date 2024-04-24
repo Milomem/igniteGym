@@ -19,7 +19,7 @@ export function HomeHeader() {
         </Text>
 
         <Heading color="gray.100" fontSize="md">
-          Rodrigo
+          Fellipe
         </Heading>
       </VStack>
 

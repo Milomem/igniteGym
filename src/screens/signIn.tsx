@@ -18,42 +18,54 @@ export function SignIn() {
   
   return (
     <ScrollView contentContainerStyle={{ flexGrow: 1 }} showsVerticalScrollIndicator={false}>
-      <VStack flex={1} px={10}>
-        <Image 
-          source={BackgroundImg}
-          defaultSource={BackgroundImg}
-          alt="Pessoas treinando"
-          resizeMode="contain"
-          position="absolute"
-        />
+    <VStack flex={1} px={10} pb={16}>
+    <Image 
+      source={BackgroundImg}
+      defaultSource={BackgroundImg}
+      alt="Pessoas treinando"
+      resizeMode="contain"
+      position="absolute"
+    />
 
-        <Center my={24}>
-          <LogoSvg />
+    <Center my={24}>
+      <LogoSvg />
 
-          <Text color="gray.100" fontSize="sm">
-            Treine sua mente e o seu corpo.
-          </Text>
-        </Center>
+      <Text color="gray.100" fontSize="sm">
+        Treine sua mente e o seu corpo.
+      </Text>
+    </Center>
 
-        <Center>
-          <Heading color="gray.100" fontSize="xl" mb={6} fontFamily="heading">
-            Acesse a conta
-          </Heading>
+    <Center flex={1}>
+      <Heading color="gray.100" fontSize="xl" mb={6} fontFamily="heading">
+        Acesse a conta
+      </Heading>
 
-          <Input 
-            placeholder="E-mail" 
-            keyboardType="email-address"
-            autoCapitalize="none"
+      <Input 
+        placeholder="E-mail" 
+        keyboardType="email-address"
+        autoCapitalize="none"
 
-          />
-          <Input 
-            placeholder="Senha" 
-            secureTextEntry
-          />
+      />
+      <Input 
+        placeholder="Senha" 
+        secureTextEntry
+      />
 
-          <Button title="Criar Conta" variant="outline" onPress={handleNewAccount} />
-        </Center>
-      </VStack>
-    </ScrollView>
+      <Button title="Acessar" />
+    </Center>
+
+    <Center mt={24}>
+      <Text color="gray.100" fontSize="sm" mb={3} fontFamily="body">
+        Ainda não tem acesso?
+      </Text>
+
+      <Button 
+        title="Criar Conta" 
+        variant="outline"
+        onPress={handleNewAccount}
+      />
+    </Center>
+  </VStack>
+</ScrollView>
   );
 }

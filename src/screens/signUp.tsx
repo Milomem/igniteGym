@@ -33,7 +33,7 @@ export function SignUp() {
           </Text>
         </Center>
 
-        <Center>
+        <Center flex={1}>
           <Heading color="gray.100" fontSize="xl" mb={6} fontFamily="heading">
             Crie sua conta
           </Heading>
