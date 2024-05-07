@@ -6,14 +6,12 @@ import { Input } from "@components/input";
 import { Button } from "@components/button";
 
 import { useNavigation } from "@react-navigation/native";
-import { Alert } from "react-native";
 
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
 import { api } from "src/service/api";
-import axios from "axios";
 import { AppError } from "@utils/appError";
 import { useState } from "react";
 import { useAuth } from "@hooks/useAuth";

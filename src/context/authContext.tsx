@@ -9,6 +9,7 @@ import { storageAuthTokenGet, storageAuthTokenRemove, storageAuthTokenSave } fro
 export type AuthContextDataProps = {
   user: UserDTO;
   singIn: (email: string, password: string) => Promise<void>;
+  updateUserProfile: (userUpdated: UserDTO) => Promise<void>;
   isLoadingUserStorageData: boolean;
   signOut: () => Promise<void>;
 }
@@ -27,6 +28,15 @@ type AuthContextProviderProps = {
       api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
   
       setUser(userData);
+    }
+
+    async function updateUserProfile(userUpdated: UserDTO) {
+      try {
+        setUser(userUpdated);
+        await storageUserSave(userUpdated);
+      } catch (error) {
+        throw error;
+      }
     }
 
     async function storageUserAndTokenSave(userData: UserDTO, token: string) {
@@ -100,7 +110,8 @@ type AuthContextProviderProps = {
         user, 
         singIn,
         isLoadingUserStorageData,
-        signOut
+        signOut,
+        updateUserProfile,
       }}>
         {children}
       </AuthContext.Provider>
